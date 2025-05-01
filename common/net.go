@@ -1,6 +1,7 @@
 package common
 
 import (
+	"crypto/tls"
 	"davinci/common/log"
 	"fmt"
 	"github.com/projectdiscovery/mapcidr"
@@ -14,7 +15,14 @@ var client *http.Client
 
 func GetHttpClient() *http.Client {
 	if client == nil {
-		client = &http.Client{}
+		client = &http.Client{
+			Transport: &http.Transport{
+				TLSClientConfig: &tls.Config{
+					// 忽略证书校验
+					InsecureSkipVerify: true,
+				},
+			},
+		}
 	}
 	return client
 }

@@ -37,7 +37,7 @@ var (
 			"  - exec:        execute the command once and return directly\n" +
 			"  - shell:       pgsql interactive shell\n" +
 			"  - auto_gather: automatically collect database information, including users, databases,\n" +
-			"                 tables, table structures, and the first 5 rows of data for each table" +
+			"                 tables, table structures, and the first 5 rows of data for each table\n" +
 			"  - osshell:     exec os shell,three ways: [cve-2019-9193 | udf | ssl_passpharse]\n" +
 			"  - writefile:   write file,two ways: [lo_export | copy_to]\n" +
 			"  - readfile:    read file,three ways: [lo_import | pg_read | copy_from]\n" +
